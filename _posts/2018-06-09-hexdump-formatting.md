@@ -29,10 +29,12 @@ hexdump --color \
 Here, we have passed two format strings using a `-e` switch for each. A format string consists of one or more format units. In the first string, there are four units:
 ```
 "%07_ax_L[cyan]  "	# print offset, in color
-" 8/1 "%02x "		# print 8 bytes as hex separated by a space 
+8/1 "%02x "		# print 8 bytes as hex separated by a space 
 "  "			# separate the two 8-byte columns by some space
-" 8/1 "%02x "		# repeat the second format unit
+8/1 "%02x "		# repeat the second format unit
 ```
+The `8/1` prefix indicates iteration count and byte count respectively separated by `/`. Byte count indicates on how many bytes to apply each iteration and iteration count indicates how many times to apply a format.
+
 For convenience, the format strings can be put in a file which can be passed to `hexdump` with option `-f` instead of passing them inline with `-e`.
 
 If the final offset needs to be printed at the end of the output like `hexdump -C` does, then an additional format string needs to be added (and indicated in the `hexdump` man page):
