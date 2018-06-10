@@ -14,9 +14,9 @@ Usually, I just run `hexdump -C` command to view a binary file in hex format alo
 002bb950  32 2e 31 30 30                                    |2.100|
 002bb955
 ```
-But, have you ever wondered if we can specify our own formatting? Sometimes, we may want to not output the offset so that we can diff two hexdumps more effectively, for instance. The good news is that `hexdump` does support advanced formatting. However, it may take some time to comprehend.
+But, have you ever wondered if you can specify your own formatting? Sometimes, we may want to not output the offset so that we can diff two hexdumps more effectively, for instance. The good news is that `hexdump` does support advanced formatting. However, it may take some time to comprehend.
 
-To understanding how formatting works, here is an example of custom formatting to achieve the "canonical" output with an addition that the offset is printed in <span style="color: cyan">color</span>!
+To understand how formatting works, here is an example of custom formatting to achieve the *canonical* output with an addition that the offset is printed in <span style="color: cyan">color</span>!
 
 # Example 1: Mimic `hexdump -C`
 {% highlight bash %}
@@ -37,12 +37,12 @@ The `8/1` prefix indicates iteration count and byte count respectively separated
 
 For convenience, the format strings can be put in a file which can be passed to `hexdump` with option `-f` instead of passing them inline with `-e`.
 
-If the final offset needs to be printed at the end of the output like `hexdump -C` does, then an additional format string needs to be added (and indicated in the `hexdump` man page):
+If the final offset needs to be printed at the end of the output like `hexdump -C` does, then an additional format string needs to be added (as indicated in the `hexdump` man page):
 ```
- "%07_Ax_L[cyan]  "
+"%07_Ax_L[cyan]  "
 ```
 
-The final format file would like:
+The final format file would look like:
 ```
 # file: canonical
 "%07_Ax_L[cyan]  "
@@ -58,3 +58,6 @@ hexdump -L -f canonical file.bin
 *Note:* `--color` and `-L` options are equivalent.
 
 Now, coming to the original case of omitting the offset from the output, removing  the `"%07_ax_L[cyan] "` format string will do the trick.
+
+# Further reading
+To see hexdump being used in its full glory: [SUSE Blog: Making Sense of Hexdump](https://www.suse.com/c/making-sense-hexdump/)
