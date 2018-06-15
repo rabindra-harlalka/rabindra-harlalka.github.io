@@ -18,7 +18,7 @@ But, have you ever wondered if you can specify your own formatting? Sometimes, w
 
 To understand how formatting works, here is an example of custom formatting to achieve the *canonical* output with an addition that the offset is printed in <span style="color: cyan">color</span>!
 
-# Example 1: Mimic `hexdump -C`
+## Example 1: Mimic `hexdump -C`
 {% highlight bash %}
 hexdump --color \
  -e '"%07_ax_L[cyan]  " 8/1 "%02x " "  " 8/1 "%02x "' \
@@ -59,5 +59,5 @@ hexdump -L -f canonical file.bin
 
 Now, coming to the original case of omitting the offset from the output, removing  the `"%07_ax_L[cyan] "` format string will do the trick.
 
-# Further reading
+## Further reading
 To see hexdump being used in its full glory: [SUSE Blog: Making Sense of Hexdump](https://www.suse.com/c/making-sense-hexdump/)

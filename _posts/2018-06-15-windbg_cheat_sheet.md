@@ -81,5 +81,5 @@ dt ntdll!*	# Display all variables in ntdll
 !wow64exts.help	Wow64 Debugger Extensions
 ```
 
-##References
-http://windbg.info/doc/1-common-cmds.html
+## References
+[windbg.info: Common WinDbg Commands](http://windbg.info/doc/1-common-cmds.html)
