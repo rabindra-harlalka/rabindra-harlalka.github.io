@@ -32,7 +32,7 @@ localhost:10.0
 9. The application will open on the local Windows PC inside the X server's window.
 
 ### Example
-![](_images/ssh-x11.png?raw=true)
+![](/_images/ssh-x11.png?raw=true)
 
 ## References
 - [https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/](https://fabianlee.org/2018/10/14/ubuntu-x11-forwarding-to-view-gui-applications-running-on-server-hosts/)
